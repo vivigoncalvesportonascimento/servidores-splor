@@ -1,86 +1,41 @@
-name: splor_202506_servidores
-type: table
-path: data-raw/splor_202506_servidores.csv
-scheme: file
-format: csv
-mediatype: text/csv
-encoding: utf-8-sig
-dialect:
-  csv:
-    delimiter: ;
-schema:
-  fields:
-    - name: Ano/Mês Referência
-      type: string
-    - name: MASP
-      type: string
-    - name: Nº Admissão
-      type: integer
-    - name: Masp/Admissão
-      type: integer
-    - name: Nome Servidor
-      type: string
-    - name: CPF
-      type: integer
-    - name: Data Completa
-      type: string
-    - name: E-mail
-      type: string
-    - name: Cod Sit Funcional
-      type: integer
-    - name: Situação Funcional
-      type: string
-    - name: Cod Sit Servidor
-      type: integer
-    - name: Situação Servidor
-      type: string
-    - name: Carreira Efetiva.Cod Carreira
-      type: string
-    - name: Cod Carreira.Carreira
-      type: string
-    - name: Nivel
-      type: string
-    - name: Carreira Efetiva.Grau
-      type: string
-    - name: Cargo Comissão.Carreira
-      type: string
-    - name: Carreira.Cod Carreira
-      type: integer
-    - name: Cod Cargo Comissão
-      type: string
-    - name: Cargo Comissão
-      type: string
-    - name: Cargo Comissão.Nível
-      type: string
-    - name: Nº Vaga
-      type: integer
-    - name: Data Exercício
-      type: string
-    - name: Cod Função Gratificada
-      type: string
-    - name: Função Gratificada
-      type: string
-    - name: Função Gratificada.Nível
-      type: string
-    - name: Função Gratificada.Grau
-      type: string
-    - name: Data Início
-      type: string
-    - name: Cod Orçamento Lotação
-      type: integer
-    - name: Instituição Lotação
-      type: string
-    - name: Sigla
-      type: string
-    - name: Cod Unidade Lotação
-      type: integer
-    - name: Unidade Lotação
-      type: string
-    - name: Cod Orçamento Exercício
-      type: integer
-    - name: Instituição Exercício
-      type: string
-    - name: Cod Unidade Exercício
-      type: integer
-    - name: Unidade Exercício
-      type: string
+name: servidores-splor
+resources:
+  - name: splor_202506_servidores
+    type: table
+    path: data-raw/splor_202506_servidores.csv
+    scheme: file
+    format: csv
+    mediatype: text/csv
+    encoding: utf-8-sig
+    dialect:
+      csv:
+        delimiter: ";"
+        doubleQuote: true
+        skipInitialSpace: true
+        skipBlankRows: true
+    schema:
+      fields:
+        - name: ano_mes_referencia
+          type: string
+        - name: masp
+          type: string
+        - name: num_admissao
+          type: integer
+        - name: masp_admissao
+          type: integer
+        - name: nome_servidor
+          type: string
+        - name: cpf
+          type: string
+        - name: data_completa
+          type: date
+        - name: email
+          type: string
+        - name: cod_sit_funcional
+          type: integer
+        - name: situacao_funcional
+          type: string
+        - name: cod_sit_servidor
+          type: integer
+        - name: situacao_servidor
+          type: string
