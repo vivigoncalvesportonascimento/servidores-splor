@@ -1,18 +1,15 @@
-name: servidores-splor
+name: splor-servidores
 resources:
-  - name: splor_202506_servidores
+  - name: splor_202506_servidores_clean
     type: table
-    path: data-raw/splor_202506_servidores.csv
+    path: data/splor_202506_servidores_clean.csv
     scheme: file
     format: csv
     mediatype: text/csv
     encoding: utf-8-sig
     dialect:
       csv:
-        delimiter: ";"
-        doubleQuote: true
-        skipInitialSpace: true
-        skipBlankRows: true
+        delimiter: ;
     schema:
       fields:
         - name: ano_mes_referencia
@@ -26,7 +23,7 @@ resources:
         - name: nome_servidor
           type: string
         - name: cpf
-          type: string
+          type: number
         - name: data_completa
           type: date
         - name: email
@@ -38,4 +35,54 @@ resources:
         - name: cod_sit_servidor
           type: integer
         - name: situacao_servidor
+          type: string
+        - name: carreira_efetiva_cod_carreira
+          type: string
+        - name: cod_carreira_carreira
+          type: string
+        - name: nivel
+          type: string
+        - name: carreira_efetiva_grau
+          type: string
+        - name: cargo_comissao_carreira
+          type: string
+        - name: carreira_cod_carreira
+          type: integer
+        - name: cod_cargo_comissao
+          type: string
+        - name: cargo_comissao
+          type: string
+        - name: cargo_comissao_nivel
+          type: string
+        - name: num_vaga
+          type: integer
+        - name: data_exercicio
+          type: date
+        - name: cod_funcao_gratificada
+          type: string
+        - name: funcao_gratificada
+          type: string
+        - name: funcao_gratificada_nivel
+          type: string
+        - name: funcao_gratificada_grau
+          type: string
+        - name: data_inicio
+          type: date
+        - name: cod_orcamento_lotacao
+          type: integer
+        - name: instituicao_lotacao
+          type: string
+        - name: sigla
+          type: string
+        - name: cod_unidade_lotacao
+          type: integer
+        - name: unidade_lotacao
+          type: string
+        - name: cod_orcamento_exercicio
+          type: integer
+        - name: instituicao_exercicio
+          type: string
+        - name: cod_unidade_exercicio
+          type: integer
+        - name: unidade_exercicio
           type: string
